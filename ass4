@@ -1,0 +1,84 @@
+
+#include <iostream>
+#include<string>
+using namespace std;
+
+class personal
+{
+	string name,address;
+	long int num;
+public:
+	void accept()
+	{
+		cout<<"Enter the name,address and phone number of the employee."<<endl;
+		getline(cin,name);
+		getline(cin,address);
+		cin>>num;
+	}
+	void disp()
+	{
+		cout<<"The name , address and phone number of the employee is "<<name<<" , ";
+		cout<<address<<" , "<<num<<"."<<endl;
+	}
+};
+
+class proff
+{
+	string dept,desig;
+	long int sal;
+public:
+	void accept()
+	{
+		cout<<"Enter the department , designation and salary of the employee."<<endl;
+		getline(cin,dept);
+		getline(cin,desig);
+		cin>>sal;
+	}
+	void disp()
+	{
+		cout<<"The department , designation and salary of the employee is "<<dept<<" , ";
+		cout<<desig<<" , "<<sal<<"."<<endl;
+	}
+};
+
+class aca
+{
+	string deg;
+	float per;
+public:
+	void accept()
+	{
+		cout<<"Enter the degree and percentage of the employee."<<endl;
+		cin>>deg>>per;
+	}
+	void disp()
+	{
+		cout<<"The degree and percentage of the employee is "<<deg<<" , ";
+		cout<<per<<"."<<endl;
+	}
+};
+
+class bio:private personal,private proff,private aca
+{
+public:
+	void accept()
+	{
+		personal::accept();
+		proff::accept();
+		aca::accept();
+	}
+	void disp()
+	{
+		personal::disp();
+		proff::disp();
+		aca::disp();
+	}
+};
+
+int main()
+{
+	bio obj;
+	obj.accept();
+	obj.disp();
+	return 0;
+}

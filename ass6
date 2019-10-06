@@ -1,0 +1,116 @@
+
+#include <iostream>//bubble sort
+using namespace std;
+
+template<class T>
+class vector1
+{
+	T a[20];
+	int n;
+
+public:
+	void read()
+	{
+		cout<<"\n enter n: ";
+		cin>>n;
+		for(int i=0;i<n;i++)
+			{cin>>a[i];}
+	}
+	void display()
+	{
+		cout<<"elements in array are: ("<<a[0];
+
+
+			for(int i=1;i<n;i++)
+			{cout<<","<<a[i];}
+			cout<<")";
+
+	}
+	void bubblesort()
+{
+		for(int i=1;i<n;i++)
+		{
+
+		for(int j=0;j<n-i;j++)
+		{
+		 if (a[j]>a[j+1])
+		 {
+			T temp= a[j];
+			a[j]= a[j+1];
+			a[j+1]=temp;
+		 }
+		 cout<<"\n for i="<<i<<"& j="<<j<<":";
+		 display();
+		}
+		}
+}
+
+
+};
+
+
+
+template<class T>
+void menu(vector1<T> obj)
+{
+
+	int ch;
+do
+{
+	cout<<"\n1.read";
+	cout<<"\n2.display";
+	cout<<"\n3.bubblesort";
+	cout<<"\n4.exit";
+
+
+	cin>>ch;
+	switch(ch)
+	{
+
+	case 1:
+		obj.read();
+		break;
+	case 2:
+		obj.display();
+		break;
+	case 3:
+		obj.bubblesort();
+		break;
+
+	}
+
+
+}while(ch!=3);
+}
+
+
+int main(){
+
+	int cho;
+do
+{
+	cout<<"\n\nEnter your choice from:-";
+	cout<<"\n1. int";
+	cout<<"\n2. float";
+	cout<<"\n3. exit";
+
+    cin>>cho;
+	switch(cho)
+	{
+	case 1:
+		{vector1<int> o;
+		menu(o);
+		break;
+		}
+	case 2:
+		{vector1<float> o;
+		menu(o);
+		 break;
+		}
+	}
+}while(cho!=3);
+	return 0;
+}
+
+
+

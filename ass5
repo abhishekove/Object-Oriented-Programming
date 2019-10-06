@@ -1,0 +1,138 @@
+
+#include <iostream>
+using namespace std;
+
+template<class T>
+class vector1
+{
+	T a[20];
+	int n;
+
+public:
+	void read()
+	{
+		cout<<"\n enter n: ";
+		cin>>n;
+		for(int i=0;i<n;i++)
+			{cin>>a[i];}
+	}
+	void display()
+	{
+		cout<<"entered element are";
+
+			cout<<"(";
+			for(int i=0;i<n;i++)
+			{cout<<a[i]<<",";}
+			cout<<")";
+
+	}
+	void modify()
+{
+		T a1,b1;
+		cout<<"enter the value to modify:";
+		cin>>a1;
+		cout<<"enter the value to replace:";
+		cin>>b1;
+		for(int i=0;i<n;i++)
+		{
+		 if (a[i]==a1)
+		 {
+			a[i]=b1;
+		 }
+		}
+}
+void multiply()
+{
+	 		T s;
+			cout<<"\n enter the number to be multiplied:-";
+			cin>>s;
+			for(int i=0;i<n;i++)
+			{
+				a[i]=a[i]*s;
+
+				}
+
+
+
+            }
+};
+
+
+
+template<class T>
+void menu(vector1<T> obj)
+{
+
+	int ch;
+do
+{
+	cout<<"\n1.read";
+	cout<<"\n2.display";
+	cout<<"\n3.multiply";
+	cout<<"\n4.modify";
+	cout<<"\n5.exit";
+
+	cin>>ch;
+	switch(ch)
+	{
+
+	case 1:
+		obj.read();
+		break;
+	case 2:
+		obj.display();
+		break;
+	case 3:
+		obj.multiply();
+		break;
+	case 4:
+		obj.modify();
+		break;
+	}
+
+
+}while(ch!=5);
+}
+
+
+int main(){
+
+	int cho;
+do
+{
+	cout<<"\n\nEnter your choice from:-";
+	cout<<"\n1. int";
+	cout<<"\n2. float";
+	cout<<"\n3. exit";
+
+    cin>>cho;
+	switch(cho)
+	{
+	case 1:
+		{vector1<int> o;
+		menu(o);
+		break;
+		}
+	case 2:
+		{vector1<float> o;
+		menu(o);
+		 break;
+		}
+	}
+}while(cho!=3);
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

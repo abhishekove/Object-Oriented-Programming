@@ -1,0 +1,60 @@
+
+#include <iostream>
+#include<cstring>
+using namespace std;
+
+void test(int age,float income,string city,char vehicle)
+{
+	try{
+		if(age<18 || age>55)
+		  throw age;
+		else if(income<50000 || income>100000)
+			throw income;
+		else if(city!="Pune" && city!="Mumbai" && city!="Banglore" && city!= "Chennai")
+			throw city;
+		else if(vehicle=='N')
+			throw vehicle;
+		else
+		{
+			cout<<"\n age is: "<<age;
+			cout<<"\n income is: "<<income;
+			cout<<"\n city is: "<<city;
+			cout<<"\n owns 4 wheeler: "<<vehicle;
+		}
+	}
+	catch(int age)
+	{
+		cout<<"\n Exception: Age criteria not met";
+	}
+	catch(float income)
+	{
+		cout<<"\n Exception: Income criteria not met";
+	}
+	catch(string city)
+	{
+		cout<<"\n Exception: City criteria not met";
+	}
+	catch(char vehicle)
+	{
+		cout<<"\n Exception: Vehicle criteria not met";
+ 	}
+
+}
+int main() {
+	int age;
+	float income;
+	string city;
+	char vehicle;
+
+	cout<<"\n enter your age";
+	cin>>age;
+	cout<<"\n enter monthly income";
+	cin>>income;
+	cout<<"\n enter city name";
+	cin>>city;
+	cout<<"\n do you have four wheeler type Y or N";
+	cin>>vehicle;
+
+	test(age,income,city,vehicle);
+	return 0;
+}

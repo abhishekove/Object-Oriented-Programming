@@ -1,0 +1,58 @@
+#include <iostream>
+#include<stack>
+using namespace std;
+
+int main()
+{
+		stack <int> s1,s2,sum;
+		int bit1,bit2,b,s,c=0,o1,o2;
+
+		cout<<"Enter The Number Of Bits For 1st Number: ";
+		cin>>bit1;
+		cout<<"Enter The Binary Number: ";
+		for(int i=0;i<bit1;i++)
+		{
+			cin>>b;
+			s1.push(b);
+		}
+
+
+		cout<<"Enter The Number Of Bits For 2nd Number: ";
+		cin>>bit2;
+		cout<<"Enter The Binary Number: ";
+		for(int i=0;i<bit2;i++)
+		{
+			cin>>b;
+			s2.push(b);
+		}
+
+		while(!s1.empty() || !s2.empty())
+		{
+			o1=o2=0;
+			if(!s1.empty())
+			{
+				o1=s1.top();
+				s1.pop();
+			}
+
+			if(!s2.empty())
+			{
+				o2=s2.top();
+				s2.pop();
+			}
+
+			s=(o1+o2+c)%2;
+			c=(o1+o2+c)/2;
+			sum.push(s);
+		}
+
+		if(c!=0)
+			sum.push(c);
+
+
+
+
+
+
+	return 0;
+}

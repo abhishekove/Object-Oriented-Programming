@@ -1,0 +1,148 @@
+
+
+#include <iostream>
+#include<list>
+#include<iterator>
+using namespace std;
+class DeQue
+{
+    list <int> s;
+    int max;
+public:
+DeQue()
+{
+    cout<<"\n Enter the Maximum size of Queue:";
+    cin>>max;
+}
+int isEmpty()
+{
+    if(s.size()==0)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+
+}
+int isFull()
+{
+    if(s.size()==max)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+void insert_front()
+{
+    int k;
+        if(isFull())
+        {
+            cout<<"\n Stack is Overflow";
+        }
+        else
+        {
+            cout<<"\n Enter the element n1:";
+            cin>>k;
+            s.push_front(k);
+            cout<<"\n front Element:"<<k;
+        }
+        }
+void insert_back()
+{
+    int k;
+    if(isFull())
+    {
+        cout<<"\n Stack is Overflow";
+    }
+    else
+    {
+        cout<<"\n Enter the element n1:";
+        cin>>k;
+        s.push_back(k);
+        cout<<"\n front Element:"<<k;
+    }
+    }
+void delete1_back()
+{
+    int k;
+    if(isEmpty())
+    {
+        cout<<"\n Stack is Underflow:";
+    }
+    else
+    {
+        k=s.back();
+        cout<<"\n K Removed Elements:"<<k;
+        s.pop_back();
+    }
+}
+void delete1_front()
+{
+    int k;
+    if(isEmpty())
+    {
+        cout<<"\n Stack is Underflow:";
+    }
+    else
+    {
+        k=s.front();
+        cout<<"\n K Removed Elements:"<<k;
+        s.pop_front();
+    }
+}
+void display()
+{
+    if(isEmpty())
+        cout<<"\n Stack Empty";
+else
+{
+    list<int>::iterator i;
+    for(i=s.begin();i!=s.end();i++)
+    {
+        cout<<"\t"<<*i;
+    }
+}
+}
+};
+int main()
+{
+DeQue s1;
+int ch;
+while(1)
+{
+    cout<<"\n 1.Insert_front";
+    cout<<"\n 2.Insert_back";
+    cout<<"\n 3.Delete_front";
+    cout<<"\n 4.Delete_back";
+    cout<<"\n 5.Display";
+    cout<<"\n Enter your choice:";
+    cin>>ch;
+    switch(ch)
+    {
+    case 1:
+        s1.insert_front();
+        break;
+    case 2:
+        s1.insert_back();
+        break;
+    case 3:
+        s1.delete1_front();
+        break;
+    case 4:
+        s1.delete1_back();
+        break;
+    case 5:
+        s1.display();
+    default:
+        cout<<"\n Invalid Choice";
+    }
+}
+    return 0;
+}
+
+

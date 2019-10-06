@@ -1,0 +1,65 @@
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class student
+{
+	int roll;
+	string name;
+	string clas;
+	char div;
+	string dob;
+	string blgr;
+	string add;
+	long int tele;
+	string lic;
+public:
+	student()
+	{
+	cout<<"Enter the roll number,name,class,division,date of birth,";
+	cout<<"blood group,address,telephone number and license number of the student."<<endl;
+	cin>>roll>>name>>clas>>div>>dob>>blgr>>add>>tele>>lic;
+	}
+
+	student(int roll1,string name1,string clas1,char div1,string dob1,
+			string blgr1,string add1,long int tele1,string lic1)
+	{
+		roll=roll1;
+		name=name1;
+		clas=clas1;
+		div=div1;
+		dob=dob1;
+		blgr=blgr1;
+		add=add1;
+		tele=tele1;
+		lic=lic1;
+	}
+	void display()
+	{
+		cout<<"The roll number,name,class,division,date of birth,blood group,";
+		cout<<"address,telephone number and license number of the student are ."<<endl;
+		cout<<roll<<endl<<name<<endl<<clas<<endl<<div<<endl<<dob<<endl<<blgr<<endl<<add<<endl<<tele<<endl<<lic<<endl;
+	}
+};
+
+int main()
+{
+	student s1;
+	s1.display();
+	int roll;
+	string name;
+	string clas;
+	char div;
+	string dob;
+	string blgr;
+	string add;
+	long int tele;
+	string lic;
+	cout<<"Enter the roll number,name,class,division,date of birth,";
+	cout<<"blood group,address,telephone number and license number of the student."<<endl;
+	cin>>roll>>name>>clas>>div>>dob>>blgr>>add>>tele>>lic;
+	student s2(roll,name,clas,div,dob,blgr,add,tele,lic);
+	s2.display();
+	return 0;
+}

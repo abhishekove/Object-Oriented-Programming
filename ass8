@@ -1,0 +1,47 @@
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+class book
+{
+	string ID,name,author;
+	float price;
+	int year;
+public:
+	void accept();
+	void display();
+};
+void book:: accept()
+{
+	cout<<"\n Id:";
+	cin>>ID;
+	cout<<"\n Name :";
+	cin>>name;
+	cout<<"\n Author Name:";
+	cin>>author;
+	cout<<"\n Price :";
+	cin>>price;
+	cout<<"\n Year: ";
+	cin>>year;
+	ofstream out("DATA");
+	out<<ID<<"\n"<<name<<"\n"<<author<<"\n"<<price<<"\n"<<year;
+	out.close();
+}
+void book::display()
+{
+	fstream in("DATA");
+	in>>ID>>name>>author>>price>>year;
+	cout<<"\n\n ID :"<<ID;
+	cout<<"\n Name:"<<name;
+	cout<<"\n Author:"<<author;
+	cout<<"\n Price:"<<price;
+	cout<<"\n Year:"<<year;
+}
+int main()
+{
+	book a;
+	a.accept();
+	a.display();
+	return 0;
+}
